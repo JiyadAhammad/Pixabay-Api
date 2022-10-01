@@ -19,7 +19,6 @@ class VideoScreen extends StatelessWidget {
           child: AppBarWidget(title: 'video'),
         ),
         body: AllVideoFetched(
-          titleName: 'Name of video',
           imageUrl:
               'https://pixabay.com/get/ge72bab8ecc605ea5075edbe5ffb9a8243c71934cebd45dca43c7879a25999458b3d40b4a308568ae61bd2b4ac6d7bc9b42f5da5bd91ca742de40e64b3bd2fdcd_1280.jpg',
         ),

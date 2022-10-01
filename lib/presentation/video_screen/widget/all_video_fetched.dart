@@ -1,45 +1,44 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 
 class AllVideoFetched extends StatelessWidget {
   const AllVideoFetched({
     super.key,
-    required this.titleName,
     required this.imageUrl,
   });
-  final String titleName;
   final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
-    final double screenwidth = MediaQuery.of(context).size.width;
-
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, childAspectRatio: 4 / 3),
-      itemCount: 10,
-      itemBuilder: (BuildContext context, int index) {
-        return Row(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              child: Container(
-                width: screenwidth * 0.44,
-                height: screenwidth * 0.44,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage(
-                      imageUrl,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        );
-      },
+    return Scaffold(
+      body: PageView.builder(
+        scrollDirection: Axis.vertical,
+        itemBuilder: (BuildContext context, int position) {
+          return Container(
+            color: Colors.accents[position % Colors.accents.length],
+          );
+        },
+        itemCount: 10,
+      ),
     );
   }
 }
+ // return GridView.count(
+    //   shrinkWrap: true,
+    //   crossAxisCount: 3,
+    //   mainAxisSpacing: 10,
+    //   crossAxisSpacing: 10,
+    //   childAspectRatio: 1 / 1.4,
+    //   children: List<Widget>.generate(
+    //     // state.homeImage.length,
+    //     10,
+    //     (int index) {
+    //       // final HomeImage image = state.homeImage[index];
+    //       return const MainScreenCard(
+    //         imageUri:
+    //             'https://cdn.pixabay.com/vimeo/328940142/Buttercups%20-%2022634.mp4?width=2608&hash=5d67b1bffe02e407f2fa11cd4839cbdb6c175b88',
+    //         // imageUri: image.webFormatURL.toString(),
+    //       );
+    //     },
+    //   ),
+    // );

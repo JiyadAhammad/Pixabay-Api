@@ -1,12 +1,10 @@
-import 'dart:developer';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../appilcation/home_screen/home_screen_bloc.dart';
 import '../../../domain/home_screen/models/home_screen.dart';
 import '../../constants/colors/colors.dart';
+import '../../widget/main_card/main_card.dart';
 
 class AllImageFetched extends StatelessWidget {
   const AllImageFetched({
@@ -51,33 +49,13 @@ class AllImageFetched extends StatelessWidget {
             state.homeImage.length,
             (int index) {
               final HomeImage image = state.homeImage[index];
-              return MainMovieCardLidtItem(
+              return MainScreenCard(
                 imageUri: image.webFormatURL.toString(),
               );
             },
           ),
         );
       },
-    );
-  }
-}
-
-class MainMovieCardLidtItem extends StatelessWidget {
-  const MainMovieCardLidtItem({super.key, required this.imageUri});
-  final String imageUri;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: NetworkImage(
-            imageUri,
-          ),
-          fit: BoxFit.fill,
-        ),
-        borderRadius: BorderRadius.circular(7),
-      ),
     );
   }
 }
