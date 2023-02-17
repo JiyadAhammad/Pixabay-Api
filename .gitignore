@@ -47,3 +47,5 @@ app.*.map.json
 lib/infrastructure/api_key.dart
 
 .gitignore
+
+android/app
