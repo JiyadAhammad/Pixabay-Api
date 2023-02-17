@@ -48,4 +48,4 @@ lib/infrastructure/api_key.dart
 
 .gitignore
 
-android/app
+/android/app
