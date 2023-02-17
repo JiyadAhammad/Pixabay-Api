@@ -21,6 +21,7 @@ class ProviderClass with ChangeNotifier {
   }
 }
 
+
 List<DataModel> data = List.generate(
   50,
   (index) => DataModel(

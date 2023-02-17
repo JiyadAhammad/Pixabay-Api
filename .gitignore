@@ -48,6 +48,7 @@ android/app/build.gradle
 # ignore files(apikey)
 lib/infrastructure/api_key.dart
 lib/provider
+lib/provider/notify.dart
 
 .gitignore
 
