@@ -20,7 +20,7 @@ class ProviderClass with ChangeNotifier {
     notifyListeners();
   }
 }
-
+//klldfk
 
 List<DataModel> data = List.generate(
   50,
